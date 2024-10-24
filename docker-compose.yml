@@ -17,6 +17,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./mysql/conf:/etc/mysql/conf.d
+      - ./mysql/init:/docker-entrypoint-initdb.d    # Nuevo volumen para scripts de inicio
     networks:
       - mysql_network
     healthcheck:
